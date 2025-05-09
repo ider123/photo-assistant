@@ -7,35 +7,32 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Photo Assistant</h1>
-  <p>Start your photo storytelling journey here.</p>
+  <div class="phone-frame">
+    <h1>Photo Assistant</h1>
+    <p>Start your photo storytelling journey here.</p>
 
-  <label for="vibeSelector">What’s your vibe today?</label>
-  <select id="vibeSelector">
-    <option value="cozy">Keep it cozy</option>
-    <option value="spicy">Make it spicy</option>
-  </select>
+    <label for="vibeSelector">What’s your vibe today?</label>
+    <select id="vibeSelector">
+      <option value="cozy">Keep it cozy</option>
+      <option value="spicy">Make it spicy</option>
+    </select>
 
-  <button onclick="capturePrompt()">Get a Photo Prompt</button>
+    <button onclick="capturePrompt()">Get a Photo Prompt</button>
+    <p id="stepCounter">Step 1 of 20</p>
+    <div id="promptBox" class="fade-in"></div>
 
-  <p id="stepCounter">Step 1 of 20</p>
-  <div id="promptBox" class="fade-in"></div>
+    <button id="cameraButton">Take a Photo</button>
+    <input type="file" accept="image/*" capture="environment" id="cameraInput" style="display:none;">
+    <div id="photoPreview"></div>
 
-  <!-- Optional camera -->
-  <button id="cameraButton">Take a Photo</button>
-  <input type="file" accept="image/*" capture="environment" id="cameraInput" style="display:none;">
-  <div id="photoPreview"></div>
+    <div id="videoSection">
+      <p>Optional: Record a short 10-second video</p>
+      <button id="videoButton">Record Video</button>
+      <video id="videoPreview" controls style="margin-top:10px; max-width:300px;"></video>
+    </div>
 
-  <!-- Video capture always visible -->
-  <div id="videoSection">
-    <p>Optional: Record a short 10-second video</p>
-    <button id="videoButton">Record Video</button>
-    <video id="videoPreview" controls style="margin-top:10px; max-width:300px;"></video>
+    <footer>© 2025 Photo Assistant — Created by Ider123</footer>
   </div>
-
-  <footer>
-    © 2025 Photo Assistant — Created by Ider123
-  </footer>
 
   <script src="script.js"></script>
 </body>

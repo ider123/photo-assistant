@@ -1,55 +1,65 @@
 body {
-  background-color: #f8f8f8;
+  margin: 0;
+  padding: 0;
+  background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  margin: 0;
+  height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
-.iphone-frame {
-  width: 270px;
-  height: 560px;
-  background: black;
-  border-radius: 48px;
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+.phone-frame {
+  width: 280px;
+  height: 580px;
+  background: #000;
+  border-radius: 40px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   position: relative;
-  overflow: hidden;
 }
 
-.notch {
-  height: 32px;
+.dynamic-island {
   width: 120px;
-  background: #000;
+  height: 30px;
+  background: #111;
   border-radius: 20px;
-  margin: 8px auto 4px;
-  z-index: 10;
+  margin: 12px auto 6px;
 }
 
-.screen {
+.phone-screen {
   background: white;
-  border-radius: 32px 32px 48px 48px;
   flex: 1;
-  padding: 20px 16px;
-  box-sizing: border-box;
+  border-radius: 30px 30px 0 0;
+  padding: 16px;
   overflow-y: auto;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
+  font-size: 13px;
+  box-sizing: border-box;
   text-align: center;
 }
 
 h1 {
-  font-size: 18px;
-  margin: 0 0 10px;
+  font-size: 16px;
+  margin: 10px 0;
 }
 
 p {
-  font-size: 14px;
+  font-size: 13px;
+  margin: 8px 0;
+}
+
+label, select {
+  display: block;
+  width: 100%;
   margin: 10px 0;
+  font-size: 13px;
+}
+
+select {
+  padding: 6px;
 }
 
 button {
@@ -58,21 +68,14 @@ button {
   border: none;
   padding: 10px;
   margin: 10px 0;
-  font-size: 14px;
-  border-radius: 8px;
+  font-size: 13px;
   width: 100%;
+  border-radius: 8px;
   cursor: pointer;
 }
 
 button:hover {
   background-color: #019875;
-}
-
-select {
-  width: 100%;
-  padding: 8px;
-  font-size: 14px;
-  margin: 10px 0;
 }
 
 #photoPreview img,
@@ -82,14 +85,10 @@ select {
   border-radius: 10px;
 }
 
-#videoSection {
-  margin-top: 10px;
-}
-
 .swipe-bar {
-  width: 60px;
+  width: 80px;
   height: 5px;
   background: #ccc;
-  border-radius: 5px;
-  margin: 10px auto;
+  border-radius: 10px;
+  margin: 8px auto;
 }

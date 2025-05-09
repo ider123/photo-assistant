@@ -13,5 +13,11 @@ const prompts = [
 
 function capturePrompt() {
   const prompt = prompts[Math.floor(Math.random() * prompts.length)];
-  document.getElementById('promptBox').textContent = prompt;
+  const promptBox = document.getElementById('promptBox');
+
+  // Remove fade-in class to reset animation
+  promptBox.classList.remove('fade-in');
+  void promptBox.offsetWidth; // trigger reflow
+  promptBox.textContent = prompt;
+  promptBox.classList.add('fade-in');
 }

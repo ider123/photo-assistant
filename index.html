@@ -8,23 +8,24 @@
 </head>
 <body>
   <div class="phone-frame">
-    <div class="dynamic-island"></div>
-    <div class="phone-screen">
+    <div class="notch"></div>
+    <div class="status-bar">
+      <span class="time">3:04</span>
+      <span class="status-icons">Wi-Fi LTE 61%</span>
+    </div>
+    <div class="screen">
       <h1>Photo Assistant</h1>
       <p>Start your photo storytelling journey here.</p>
-
       <label for="vibeSelector">What’s your vibe today?</label>
       <select id="vibeSelector">
         <option value="cozy">Keep it cozy</option>
         <option value="spicy">Make it spicy</option>
       </select>
-
       <button onclick="capturePrompt()">Get a Photo Prompt</button>
       <p id="stepCounter">Step 1 of 20</p>
       <div id="promptBox" class="fade-in"></div>
-
       <button id="cameraButton">Take a Photo</button>
-      <input type="file" accept="image/*" capture="environment" id="cameraInput" style="display:none;">
+      <input type="file" accept="image/*" capture="environment" id="cameraInput" style="display:none;" />
       <div id="photoPreview"></div>
 
       <div id="videoSection">

@@ -10,3 +10,8 @@ const prompts = [
   "Photograph your morning coffee with dramatic shadows.",
   "Shoot your workspace like a film set."
 ];
+
+function capturePrompt() {
+  const prompt = prompts[Math.floor(Math.random() * prompts.length)];
+  document.getElementById('promptBox').textContent = prompt;
+}

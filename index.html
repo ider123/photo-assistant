@@ -9,7 +9,7 @@
 <body>
   <div class="phone-frame">
 
-    <!-- Top status bar with notch -->
+    <!-- Top Notch + Status Bar -->
     <div class="status-bar">
       <div class="notch"></div>
       <div class="status-icons">
@@ -18,7 +18,7 @@
       </div>
     </div>
 
-    <!-- App content -->
+    <!-- App Content -->
     <h1>Photo Assistant</h1>
     <p>Start your photo storytelling journey here.</p>
 
@@ -32,22 +32,39 @@
     <p id="stepCounter">Step 1 of 20</p>
     <div id="promptBox" class="fade-in"></div>
 
-    <!-- Camera interface -->
+    <!-- Camera -->
     <button id="cameraButton">Take a Photo</button>
     <input type="file" accept="image/*" capture="environment" id="cameraInput" style="display:none;">
     <div id="photoPreview"></div>
 
-    <!-- Video section -->
+    <!-- Video -->
     <div id="videoSection">
       <p>Optional: Record a short 10-second video</p>
       <button id="videoButton">Record Video</button>
       <video id="videoPreview" controls style="margin-top:10px; max-width:300px;"></video>
     </div>
 
-    <!-- Bottom swipe bar like iPhone -->
+    <!-- Tab Bar -->
+    <div class="tab-bar">
+      <div class="tab active">
+        <span class="tab-icon">📷</span>
+        <span class="tab-label">Camera</span>
+      </div>
+      <div class="tab">
+        <span class="tab-icon">🧭</span>
+        <span class="tab-label">Explore</span>
+      </div>
+      <div class="tab">
+        <span class="tab-icon">⚙️</span>
+        <span class="tab-label">Settings</span>
+      </div>
+    </div>
+
+    <!-- iPhone Swipe Bar -->
     <div class="swipe-bar"></div>
 
-    <footer>© 2025 Photo Assistant — Created by Ider123</footer>
+    <!-- Footer -->
+    <footer>© 2025 Photo Assistant — Built by Ider123</footer>
   </div>
 
   <script src="script.js"></script>

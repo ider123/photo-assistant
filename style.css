@@ -1,7 +1,7 @@
 body {
   font-family: 'Helvetica Neue', sans-serif;
-  background-color: #ffffff;
-  color: #111111;
+  background-color: #111111;
+  color: #ffffff;
   text-align: center;
   padding: 50px 20px;
   margin: 0;
@@ -12,17 +12,18 @@ h1 {
   font-weight: bold;
   letter-spacing: -0.5px;
   margin-bottom: 10px;
+  color: #ffffff;
 }
 
 p {
   font-size: 1.2rem;
-  color: #333333;
+  color: #cccccc;
   margin-bottom: 30px;
 }
 
 button {
-  background-color: black;
-  color: white;
+  background-color: #ffffff;
+  color: #111111;
   border: none;
   padding: 14px 28px;
   font-size: 1rem;
@@ -34,7 +35,7 @@ button {
 }
 
 button:hover {
-  background-color: #222;
+  background-color: #dddddd;
   transform: scale(1.03);
 }
 
@@ -45,5 +46,5 @@ button:hover {
   margin-left: auto;
   margin-right: auto;
   line-height: 1.6;
-  color: #111;
+  color: #ffffff;
 }

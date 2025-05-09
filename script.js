@@ -27,7 +27,7 @@ const spicyPrompts = [
   "Photograph something dramatic — or pretend your life has meaning for 2 seconds.",
   "Find a shadow. Try not to trip while chasing aesthetic lighting.",
   "Take a picture of your hand doing something useful. Just once.",
-  "Capture your view right now. Unless it's a mess — then zoom in.",
+  "Capture your view right now. Unless it’s a mess — then zoom in.",
   "Snap your breakfast. Or whatever you lied about eating on Instagram.",
   "Take a blurry shot. It’s not art — your lens is dirty. Clean it.",
   "Frame your ‘outfit’ — if pajamas count, we support you (barely).",
@@ -52,16 +52,11 @@ function capturePrompt() {
   const promptBox = document.getElementById('promptBox');
   const stepCounter = document.getElementById('stepCounter');
 
-  // Set the prompt list only once, at the beginning
   if (currentStep === 0) {
-    if (vibe === "spicy") {
-      currentPrompts = spicyPrompts;
-    } else {
-      currentPrompts = cozyPrompts;
-    }
+    currentPrompts = vibe === "spicy" ? spicyPrompts : cozyPrompts;
   }
 
-  if (currentStep < currentPrompts.length) {
+  if (currentStep < currentPrompts.length - 1) {
     const prompt = currentPrompts[currentStep];
     currentStep++;
 
@@ -72,17 +67,12 @@ function capturePrompt() {
 
     stepCounter.textContent = `Step ${currentStep} of ${currentPrompts.length}`;
   } else {
-    promptBox.textContent = "You're done! Time to record a short video.";
-stepCounter.textContent = "";
-videoSection.style.display = 'block';
+    promptBox.textContent = "You're done! Take a video or restart.";
+    stepCounter.textContent = "";
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelector('button').addEventListener('click', capturePrompt);
-  document.getElementById('promptBox').addEventListener('click', capturePrompt);
-});
-// Camera handling
+// Camera logic
 const cameraButton = document.getElementById('cameraButton');
 const cameraInput = document.getElementById('cameraInput');
 const photoPreview = document.getElementById('photoPreview');
@@ -102,11 +92,10 @@ cameraInput.addEventListener('change', () => {
     photoPreview.appendChild(img);
   }
 });
-// Video capture
-const videoButton = document.getElementById('videoButton');
-const videoSection = document.getElementById('videoSection');
-const videoPreview = document.getElementById('videoPreview');
 
+// Video logic
+const videoButton = document.getElementById('videoButton');
+const videoPreview = document.getElementById('videoPreview');
 let mediaRecorder;
 let videoChunks = [];
 
@@ -129,9 +118,8 @@ videoButton.addEventListener('click', async () => {
 
   mediaRecorder.start();
 
-  // Stop after 10 seconds
   setTimeout(() => {
     mediaRecorder.stop();
     stream.getTracks().forEach(track => track.stop());
-  }, 10000);
+  }, 10000); // 10 seconds
 });

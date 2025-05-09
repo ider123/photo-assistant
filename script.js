@@ -15,9 +15,14 @@ function capturePrompt() {
   const prompt = prompts[Math.floor(Math.random() * prompts.length)];
   const promptBox = document.getElementById('promptBox');
 
-  // Reset fade animation
+  // Reset animation
   promptBox.classList.remove('fade-in');
-  void promptBox.offsetWidth;
+  void promptBox.offsetWidth; // force reflow
   promptBox.textContent = prompt;
   promptBox.classList.add('fade-in');
 }
+
+// ALSO trigger when user taps the promptBox
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('promptBox').addEventListener('click', capturePrompt);
+});

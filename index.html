@@ -19,6 +19,12 @@
   <option value="spicy">Make it spicy</option>
 </select>
   <button onclick="capturePrompt()">Get a Photo Prompt</button>
+  <!-- Video capture (shown only in Step 20) -->
+<div id="videoSection" style="display:none;">
+  <p>Final Step: Record a short 10-second video</p>
+  <button id="videoButton">Record Video</button>
+  <video id="videoPreview" controls style="margin-top:10px; max-width:300px;"></video>
+</div>
   <p id="stepCounter">Step 1 of 20</p>
   <div id="promptBox" class="fade-in"></div>
 

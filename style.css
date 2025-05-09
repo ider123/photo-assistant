@@ -1,3 +1,4 @@
+/* Base layout */
 body {
   margin: 0;
   padding: 0;
@@ -22,12 +23,32 @@ body {
   position: relative;
 }
 
+/* Notch */
+.phone-notch {
+  width: 120px;
+  height: 28px;
+  background: black;
+  border-radius: 16px;
+  margin: 10px auto 0;
+}
+
+/* Swipe bar (moved to bottom of phone frame) */
+.swipe-bar {
+  width: 120px;
+  height: 5px;
+  background: #ccc;
+  border-radius: 3px;
+  margin: 8px auto;
+  opacity: 0.7;
+}
+
+/* Phone Screen */
 .phone-screen {
   background: white;
   width: 100%;
-  height: calc(100% - 28px); /* subtract notch */
+  height: calc(100% - 28px - 20px); /* subtract notch + swipe bar space */
   border-radius: 32px 32px 42px 42px;
-  padding: 24px 16px 36px;
+  padding: 24px 16px 30px;
   box-sizing: border-box;
   overflow-y: auto;
   overflow-x: hidden;
@@ -36,13 +57,13 @@ body {
   text-align: center;
 }
 
-/* Typography */
+/* Text styling */
 h1 {
   font-size: 18px;
   margin-bottom: 10px;
 }
 
-/* Buttons */
+/* Button styling */
 button {
   background-color: #00b894;
   color: white;
@@ -59,7 +80,7 @@ button:hover {
   background-color: #019875;
 }
 
-/* Dropdown */
+/* Select box styling */
 select {
   width: 100%;
   padding: 8px;
@@ -67,7 +88,7 @@ select {
   margin: 10px 0;
 }
 
-/* Previews */
+/* Image and video previews */
 #photoPreview img,
 #videoPreview {
   margin-top: 10px;
@@ -75,7 +96,6 @@ select {
   border-radius: 10px;
 }
 
-/* Video Section */
 #videoSection {
   margin-top: 10px;
 }

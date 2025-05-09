@@ -1,42 +1,45 @@
-/* Phone-style container */
+/* iPhone 15 style screen container */
 .phone-frame {
-  background-color: white;         /* White inner screen */
-  max-width: 390px;                /* Narrower like iPhone screen */
-  min-height: 640px;
+  background-color: white;       /* White screen background */
+  width: 390px;                  /* iPhone 15 screen width */
+  height: 844px;                 /* iPhone 15 screen height */
   margin: 40px auto;
-  border: 16px solid black;        /* Black phone frame */
-  border-radius: 24px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  border: 14px solid black;      /* Slim black frame */
+  border-radius: 38px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
   padding: 20px;
   box-sizing: border-box;
-  overflow: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
-/* Landscape iPad override */
-@media screen and (orientation: landscape) {
+/* Landscape scaling for tablets */
+@media screen and (min-width: 768px) and (orientation: landscape) {
   .phone-frame {
     transform: scale(0.85);
+    transform-origin: top center;
   }
 }
 
-/* Status bar + notch */
+/* Notch + status bar */
 .status-bar {
-  height: 24px;
+  height: 26px;
   background-color: white;
   position: relative;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
   margin-bottom: 10px;
 }
 
 .notch {
-  width: 160px;
-  height: 30px;
+  width: 180px;
+  height: 36px;
   background-color: black;
-  border-radius: 0 0 20px 20px;
+  border-radius: 22px;
   margin: 0 auto;
   position: relative;
-  top: -6px;
+  top: -5px;
 }
 
 .status-icons {
@@ -51,18 +54,28 @@
   font-family: monospace;
 }
 
-/* General styling */
+/* Swipe bar */
+.swipe-bar {
+  width: 135px;
+  height: 5px;
+  background-color: #bbb;
+  border-radius: 4px;
+  margin: 16px auto 8px;
+  opacity: 0.6;
+}
+
+/* UI text and elements */
 body {
   font-family: 'Helvetica Neue', sans-serif;
-  background-color: #222;
-  color: #111;
+  background-color: #111;
   margin: 0;
   padding: 0;
   text-align: center;
+  color: #111;
 }
 
 h1 {
-  font-size: 26px;
+  font-size: 24px;
   margin-bottom: 10px;
 }
 
@@ -78,7 +91,7 @@ button {
   padding: 10px 20px;
   font-size: 16px;
   margin: 10px 5px;
-  border-radius: 6px;
+  border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -102,26 +115,28 @@ select {
   color: #111;
   padding: 15px;
   margin: 20px auto;
-  border-radius: 8px;
+  border-radius: 10px;
   max-width: 90%;
   font-size: 18px;
   line-height: 1.5;
-  animation: fade-in 0.5s ease-in-out;
+  animation: fade-in 0.4s ease-in-out;
 }
 
 #photoPreview img,
 #videoPreview {
   margin-top: 15px;
   max-width: 90%;
-  border-radius: 6px;
+  border-radius: 10px;
 }
 
+/* Footer */
 footer {
-  margin-top: 30px;
+  margin-top: auto;
   font-size: 12px;
-  color: #999;
+  color: #888;
 }
 
+/* Animations */
 .fade-in {
   animation: fade-in 0.5s ease-in-out;
 }
@@ -135,33 +150,4 @@ footer {
     opacity: 1;
     transform: translateY(0);
   }
-}
-/* iPhone-style swipe gesture bar */
-.swipe-bar {
-  width: 130px;
-  height: 5px;
-  background-color: #ccc;
-  border-radius: 4px;
-  margin: 16px auto 8px;
-  opacity: 0.6;
-}
-
-/* Make phone content scrollable if needed */
-.phone-frame {
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-/* Improve layout spacing inside app */
-.phone-frame h1,
-.phone-frame p,
-.phone-frame button,
-.phone-frame select,
-#promptBox,
-#photoPreview,
-#videoPreview,
-footer {
-  max-width: 90%;
-  margin-left: auto;
-  margin-right: auto;
 }

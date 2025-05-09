@@ -136,3 +136,32 @@ footer {
     transform: translateY(0);
   }
 }
+/* iPhone-style swipe gesture bar */
+.swipe-bar {
+  width: 130px;
+  height: 5px;
+  background-color: #ccc;
+  border-radius: 4px;
+  margin: 16px auto 8px;
+  opacity: 0.6;
+}
+
+/* Make phone content scrollable if needed */
+.phone-frame {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Improve layout spacing inside app */
+.phone-frame h1,
+.phone-frame p,
+.phone-frame button,
+.phone-frame select,
+#promptBox,
+#photoPreview,
+#videoPreview,
+footer {
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}

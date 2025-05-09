@@ -12,6 +12,7 @@
       <span id="clock">3:04</span>
       <span id="network">Wi-Fi LTE 61%</span>
     </div>
+
     <div class="iphone-screen">
       <h1>Photo Assistant</h1>
       <p>Start your photo storytelling journey here.</p>
@@ -20,25 +21,21 @@
       <select id="vibeSelector">
         <option value="cozy">Keep it cozy</option>
         <option value="spicy">Make it spicy</option>
-        <option value="clean">Stay minimal</option>
       </select>
 
       <button onclick="capturePrompt()">Get a Photo Prompt</button>
       <div id="stepCounter">Step 1 of 20</div>
       <div id="promptBox"></div>
 
-      <button onclick="document.getElementById('cameraInput').click()">Take a Photo</button>
-      <input type="file" accept="image/*" capture="environment" id="cameraInput" style="display:none;" />
+      <button id="cameraButton" onclick="document.getElementById('cameraInput').click()">Take a Photo</button>
+      <input type="file" accept="image/*" capture="environment" id="cameraInput" style="display: none;" />
+      <div id="photoPreview"></div>
 
       <p>Optional: Record a short 10-second video</p>
-      <button onclick="document.getElementById('videoInput').click()">Record Video</button>
-      <input type="file" accept="video/*" capture="user" id="videoInput" style="display:none;" />
+      <button onclick="recordVideo()">Record Video</button>
 
-      <div id="mediaPreview">
-        <video controls id="videoPreview" style="display:none;"></video>
-      </div>
+      <div class="swipe-bar"></div>
     </div>
-    <div class="swipe-bar"></div>
   </div>
 
   <script src="script.js"></script>

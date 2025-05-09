@@ -9,8 +9,13 @@
 <body>
   <h1>Photo Assistant</h1>
   <p>Start your photo storytelling journey here.</p>
-  
+  <label for="vibeSelector">What’s your vibe today?</label>
+<select id="vibeSelector">
+  <option value="cozy">Keep it cozy</option>
+  <option value="spicy">Make it spicy</option>
+</select>
   <button onclick="capturePrompt()">Get a Photo Prompt</button>
+  <p id="stepCounter">Step 1 of 20</p>
   <div id="promptBox" class="fade-in"></div>
 
   <!-- Footer -->

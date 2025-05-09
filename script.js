@@ -72,8 +72,9 @@ function capturePrompt() {
 
     stepCounter.textContent = `Step ${currentStep} of ${currentPrompts.length}`;
   } else {
-    promptBox.textContent = "You're done! Great job.";
-    stepCounter.textContent = "";
+    promptBox.textContent = "You're done! Time to record a short video.";
+stepCounter.textContent = "";
+videoSection.style.display = 'block';
   }
 }
 
@@ -100,4 +101,37 @@ cameraInput.addEventListener('change', () => {
     photoPreview.innerHTML = '';
     photoPreview.appendChild(img);
   }
+});
+// Video capture
+const videoButton = document.getElementById('videoButton');
+const videoSection = document.getElementById('videoSection');
+const videoPreview = document.getElementById('videoPreview');
+
+let mediaRecorder;
+let videoChunks = [];
+
+videoButton.addEventListener('click', async () => {
+  const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+  videoPreview.srcObject = stream;
+  videoPreview.play();
+
+  mediaRecorder = new MediaRecorder(stream);
+  videoChunks = [];
+
+  mediaRecorder.ondataavailable = event => videoChunks.push(event.data);
+
+  mediaRecorder.onstop = () => {
+    const videoBlob = new Blob(videoChunks, { type: 'video/mp4' });
+    const videoURL = URL.createObjectURL(videoBlob);
+    videoPreview.src = videoURL;
+    videoPreview.srcObject = null;
+  };
+
+  mediaRecorder.start();
+
+  // Stop after 10 seconds
+  setTimeout(() => {
+    mediaRecorder.stop();
+    stream.getTracks().forEach(track => track.stop());
+  }, 10000);
 });

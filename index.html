@@ -7,34 +7,34 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="iphone-frame">
-    <div class="iphone-status-bar">
-      <span id="clock">3:04</span>
-      <span id="network">Wi-Fi LTE 61%</span>
-    </div>
+  <div class="frame-wrapper">
+    <div class="iphone-frame">
+      <div class="iphone-status-bar">
+        <span id="clock">3:04</span>
+        <span id="network">Wi-Fi LTE 61%</span>
+      </div>
+      <div class="iphone-screen">
+        <h1>Photo Assistant</h1>
+        <p>Start your photo storytelling journey here.</p>
 
-    <div class="iphone-screen">
-      <h1>Photo Assistant</h1>
-      <p>Start your photo storytelling journey here.</p>
+        <label for="vibeSelector">What’s your vibe today?</label>
+        <select id="vibeSelector">
+          <option value="cozy">Keep it cozy</option>
+          <option value="spicy">Make it bold</option>
+          <option value="quiet">Stay minimal</option>
+        </select>
 
-      <label for="vibeSelector">What’s your vibe today?</label>
-      <select id="vibeSelector">
-        <option value="cozy">Keep it cozy</option>
-        <option value="spicy">Make it spicy</option>
-      </select>
+        <button onclick="capturePrompt()">Get a Photo Prompt</button>
+        <p id="stepCounter">Step 1 of 20</p>
+        <div id="promptBox"></div>
 
-      <button onclick="capturePrompt()">Get a Photo Prompt</button>
-      <div id="stepCounter">Step 1 of 20</div>
-      <div id="promptBox"></div>
+        <button id="cameraButton">Take a Photo</button>
 
-      <button id="cameraButton" onclick="document.getElementById('cameraInput').click()">Take a Photo</button>
-      <input type="file" accept="image/*" capture="environment" id="cameraInput" style="display: none;" />
-      <div id="photoPreview"></div>
+        <p>Optional: Record a short 10-second video</p>
+        <button id="videoButton">Record Video</button>
 
-      <p>Optional: Record a short 10-second video</p>
-      <button onclick="recordVideo()">Record Video</button>
-
-      <div class="swipe-bar"></div>
+        <div class="swipe-bar"></div>
+      </div>
     </div>
   </div>
 

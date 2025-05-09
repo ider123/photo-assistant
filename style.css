@@ -1,11 +1,11 @@
 /* iPhone 15 style screen container */
 .phone-frame {
-  background-color: white;       /* White screen background */
-  width: 390px;                  /* iPhone 15 screen width */
-  height: 844px;                 /* iPhone 15 screen height */
+  background-color: white;
+  width: 360px;             /* Slightly smaller width */
+  height: 680px;            /* Shorter height for iPad Mini */
   margin: 40px auto;
-  border: 14px solid black;      /* Slim black frame */
-  border-radius: 38px;
+  border: 14px solid black;
+  border-radius: 32px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
   padding: 20px;
   box-sizing: border-box;

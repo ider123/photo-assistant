@@ -7,20 +7,18 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="phone-frame">
-    <div class="phone-notch"></div>
-    <div class="status-bar">
-      <span class="time">2:45</span>
-      <span class="status-icons">Wi-Fi LTE 67%</span>
-    </div>
-    <div class="phone-screen">
+  <div class="iphone-frame">
+    <div class="notch"></div>
+    <div class="screen">
       <h1>Photo Assistant</h1>
       <p>Start your photo storytelling journey here.</p>
-      <label for="vibeSelector">What’s your vibe today?</label>
+
+      <label for="vibeSelector">What's your vibe today?</label>
       <select id="vibeSelector">
         <option value="cozy">Keep it cozy</option>
         <option value="spicy">Make it spicy</option>
       </select>
+
       <button onclick="capturePrompt()">Get a Photo Prompt</button>
       <p id="stepCounter">Step 1 of 20</p>
       <div id="promptBox" class="fade-in"></div>
@@ -37,7 +35,6 @@
     </div>
     <div class="swipe-bar"></div>
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>

@@ -12,33 +12,22 @@ body {
 /* Phone Frame */
 .phone-frame {
   width: 280px;
-  height: 580px;
+  height: 560px;
   background-color: black;
   border-radius: 42px;
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
   overflow: hidden;
   display: flex;
   flex-direction: column;
   position: relative;
 }
 
-/* Notch */
-.phone-notch {
-  width: 120px;
-  height: 28px;
-  background: black;
-  border-radius: 16px;
-  margin: 10px auto 0;
-  z-index: 1;
-}
-
-/* Inner white screen */
 .phone-screen {
   background: white;
   width: 100%;
-  height: calc(100% - 28px);
+  height: calc(100% - 28px); /* subtract notch */
   border-radius: 32px 32px 42px 42px;
-  padding: 20px 15px;
+  padding: 24px 16px 36px;
   box-sizing: border-box;
   overflow-y: auto;
   overflow-x: hidden;

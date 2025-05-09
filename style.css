@@ -73,3 +73,28 @@ select {
 #videoSection {
   margin-top: 10px;
 }
+.phone-frame {
+  width: 320px;
+  height: 640px;
+  margin: 40px auto;
+  background-color: #fff;
+  border-radius: 40px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding: 20px;
+  position: relative;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #111;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}

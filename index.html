@@ -8,9 +8,17 @@
 </head>
 <body>
   <div class="phone-frame">
+
+    <!-- Top status bar with notch -->
     <div class="status-bar">
-  <div class="notch"></div>
-</div>
+      <div class="notch"></div>
+      <div class="status-icons">
+        <span class="time">9:41</span>
+        <span class="icons">Wi-Fi • LTE • 100%</span>
+      </div>
+    </div>
+
+    <!-- App content -->
     <h1>Photo Assistant</h1>
     <p>Start your photo storytelling journey here.</p>
 
@@ -24,15 +32,20 @@
     <p id="stepCounter">Step 1 of 20</p>
     <div id="promptBox" class="fade-in"></div>
 
+    <!-- Camera interface -->
     <button id="cameraButton">Take a Photo</button>
     <input type="file" accept="image/*" capture="environment" id="cameraInput" style="display:none;">
     <div id="photoPreview"></div>
 
+    <!-- Video section -->
     <div id="videoSection">
       <p>Optional: Record a short 10-second video</p>
       <button id="videoButton">Record Video</button>
       <video id="videoPreview" controls style="margin-top:10px; max-width:300px;"></video>
     </div>
+
+    <!-- Bottom swipe bar like iPhone -->
+    <div class="swipe-bar"></div>
 
     <footer>© 2025 Photo Assistant — Created by Ider123</footer>
   </div>

@@ -1,14 +1,16 @@
-/* iPhone 15 Frame UI */
+/* Global Reset & Layout */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  background-color: #f5f5f5;
+  background-color: #f1f1f1;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  overflow: hidden;
 }
 
+/* iPhone 15 Outer Frame */
 .iphone-frame {
   width: 280px;
   height: 600px;
@@ -16,29 +18,30 @@ body {
   border-radius: 42px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
   overflow: hidden;
-  position: relative;
   display: flex;
   flex-direction: column;
 }
 
+/* Fake Status Bar */
 .iphone-status-bar {
   height: 28px;
   background-color: black;
   color: white;
   font-size: 12px;
+  font-weight: 500;
   display: flex;
   justify-content: space-between;
-  padding: 4px 12px;
   align-items: center;
-  font-weight: 500;
+  padding: 0 12px;
 }
 
+/* Main Screen Area */
 .iphone-screen {
   background: white;
   width: 100%;
   height: calc(100% - 28px);
   border-radius: 32px 32px 42px 42px;
-  padding: 24px 16px 36px;
+  padding: 24px 16px 32px 16px;
   box-sizing: border-box;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
@@ -46,6 +49,16 @@ body {
   text-align: center;
 }
 
+/* Bottom Swipe Home Indicator */
+.swipe-bar {
+  width: 100px;
+  height: 4px;
+  background: #ccc;
+  margin: 16px auto 0;
+  border-radius: 999px;
+}
+
+/* UI Elements */
 h1 {
   font-size: 18px;
   margin: 8px 0;
@@ -82,20 +95,6 @@ button:hover {
   font-weight: bold;
 }
 
-#mediaPreview {
+#photoPreview {
   margin-top: 10px;
-}
-
-video {
-  width: 100%;
-  max-height: 160px;
-  margin-top: 10px;
-}
-
-.swipe-bar {
-  width: 80px;
-  height: 5px;
-  background: #ccc;
-  border-radius: 3px;
-  margin: 10px auto;
 }

@@ -1,182 +1,70 @@
-/* iPhone 15 style screen container */
-.phone-frame {
-  background-color: white;
-  width: 360px;             /* Slightly smaller width */
-  height: 680px;            /* Shorter height for iPad Mini */
-  margin: 40px auto;
-  border: 14px solid black;
-  border-radius: 32px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
-  padding: 20px;
-  box-sizing: border-box;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-/* Landscape scaling for tablets */
-@media screen and (min-width: 768px) and (orientation: landscape) {
-  .phone-frame {
-    transform: scale(0.85);
-    transform-origin: top center;
-  }
-}
-
-/* Notch + status bar */
-.status-bar {
-  height: 26px;
-  background-color: white;
-  position: relative;
-  margin-bottom: 10px;
-}
-
-.notch {
-  width: 180px;
-  height: 36px;
-  background-color: black;
-  border-radius: 22px;
-  margin: 0 auto;
-  position: relative;
-  top: -5px;
-}
-
-.status-icons {
-  position: absolute;
-  top: 2px;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 12px;
-  font-size: 12px;
-  color: #333;
-  font-family: monospace;
-}
-
-/* Swipe bar */
-.swipe-bar {
-  width: 135px;
-  height: 5px;
-  background-color: #bbb;
-  border-radius: 4px;
-  margin: 16px auto 8px;
-  opacity: 0.6;
-}
-
-/* UI text and elements */
 body {
-  font-family: 'Helvetica Neue', sans-serif;
-  background-color: #111;
+  background-color: #121212;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   margin: 0;
-  padding: 0;
-  text-align: center;
-  color: #111;
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
-h1 {
-  font-size: 24px;
-  margin-bottom: 10px;
+.phone-frame {
+  background-color: black;
+  border-radius: 40px;
+  width: 375px;
+  height: 812px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  position: relative;
+  overflow: hidden;
 }
 
-p {
+.phone-notch {
+  width: 210px;
+  height: 30px;
+  background-color: #000;
+  border-radius: 20px;
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.phone-screen {
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  padding: 60px 20px 20px;
+  overflow-y: auto;
+  box-sizing: border-box;
+  border-radius: 40px;
+}
+
+button, select {
   font-size: 16px;
-  margin-top: 8px;
-}
-
-button {
+  padding: 12px 16px;
+  margin: 12px 0;
+  width: 100%;
+  border-radius: 8px;
+  border: none;
   background-color: #00b894;
   color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  margin: 10px 5px;
-  border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
 button:hover {
   background-color: #019875;
 }
 
-select {
-  padding: 10px;
-  border-radius: 6px;
-  font-size: 16px;
-  margin-top: 10px;
-  background-color: #eee;
-  color: #111;
-  border: 1px solid #ccc;
+#promptBox, #photoPreview, #videoPreview {
+  margin-top: 16px;
+  text-align: center;
 }
 
-#promptBox {
-  background-color: #f5f5f5;
-  color: #111;
-  padding: 15px;
-  margin: 20px auto;
-  border-radius: 10px;
-  max-width: 90%;
-  font-size: 18px;
-  line-height: 1.5;
-  animation: fade-in 0.4s ease-in-out;
-}
-
-#photoPreview img,
-#videoPreview {
-  margin-top: 15px;
-  max-width: 90%;
-  border-radius: 10px;
-}
-
-/* Footer */
-footer {
-  margin-top: auto;
-  font-size: 12px;
-  color: #888;
-}
-
-/* Animations */
-.fade-in {
-  animation: fade-in 0.5s ease-in-out;
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-/* Bottom Tab Bar */
-.tab-bar {
-  display: flex;
-  justify-content: space-around;
-  background-color: #f0f0f0;
-  padding: 10px 0;
-  border-top: 1px solid #ccc;
-  border-radius: 0 0 20px 20px;
-  margin-top: 10px;
-}
-
-.tab {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 12px;
-  color: #555;
-  cursor: pointer;
-}
-
-.tab-icon {
-  font-size: 20px;
-  margin-bottom: 3px;
-}
-
-.tab.active {
-  color: #00b894;
-  font-weight: bold;
+video, img {
+  max-width: 100%;
+  margin-top: 12px;
+  border-radius: 12px;
 }

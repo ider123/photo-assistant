@@ -8,31 +8,25 @@
 </head>
 <body>
   <div class="phone-frame">
-    <div class="status-bar">
-      <div class="time">2:30</div>
-      <div class="status-icons">
-        <span class="wifi">Wi-Fi</span>
-        <span class="carrier">LTE</span>
-        <span class="battery">70%</span>
-      </div>
-    </div>
     <div class="phone-notch"></div>
+    <div class="status-bar">
+      <span class="time">2:45</span>
+      <span class="status-icons">Wi-Fi LTE 67%</span>
+    </div>
     <div class="phone-screen">
       <h1>Photo Assistant</h1>
       <p>Start your photo storytelling journey here.</p>
-
       <label for="vibeSelector">What’s your vibe today?</label>
       <select id="vibeSelector">
         <option value="cozy">Keep it cozy</option>
         <option value="spicy">Make it spicy</option>
       </select>
-
       <button onclick="capturePrompt()">Get a Photo Prompt</button>
       <p id="stepCounter">Step 1 of 20</p>
       <div id="promptBox" class="fade-in"></div>
 
       <button id="cameraButton">Take a Photo</button>
-      <input type="file" accept="image/*" capture="environment" id="cameraInput" style="display:none;" />
+      <input type="file" accept="image/*" capture="environment" id="cameraInput" style="display:none;">
       <div id="photoPreview"></div>
 
       <div id="videoSection">

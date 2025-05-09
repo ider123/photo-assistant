@@ -1,14 +1,14 @@
 const prompts = [
-  "Take a cozy photo of your bed just after you wake up.",
-  "Photograph your morning coffee by a window with soft light.",
-  "Capture sunlight hitting the floor or a wall.",
-  "Shoot your shoes walking on a textured path.",
-  "Find a quiet bench or chair and shoot it in calm light.",
-  "Take a photo of your hand holding something meaningful.",
-  "Photograph shadows dancing on a wall.",
-  "Capture a street scene that feels cinematic.",
-  "Take a picture of a door, gate, or entryway with mood.",
-  "Photograph someone walking away in soft focus."
+  "Capture golden sunlight hitting your coffee mug.",
+  "Photograph shadows on a minimalist wall.",
+  "Shoot your reflection in a rainy window.",
+  "Find beauty in a quiet corner of your home.",
+  "Frame your shoes walking through leaves or puddles.",
+  "Photograph a plant in soft morning light.",
+  "Take a photo of your desk from a cinematic angle.",
+  "Capture someone walking into warm sunset light.",
+  "Shoot a lonely road or alley with moody lighting.",
+  "Photograph your hand holding something meaningful."
 ];
 
 function capturePrompt() {

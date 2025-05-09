@@ -1,46 +1,59 @@
 body {
+  margin: 0;
+  padding: 0;
   background-color: #111;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  margin: 0;
+  height: 100vh;
 }
 
+/* Phone Frame */
 .phone-frame {
   width: 280px;
   height: 580px;
-  background: black;
-  border-radius: 36px;
-  box-shadow: 0 0 30px rgba(0,0,0,0.6);
+  background-color: black;
+  border-radius: 42px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
+/* Notch */
 .phone-notch {
   width: 120px;
   height: 28px;
   background: black;
   border-radius: 16px;
   margin: 10px auto 0;
+  z-index: 1;
 }
 
+/* Inner white screen */
 .phone-screen {
   background: white;
   width: 100%;
   height: calc(100% - 28px);
-  border-radius: 32px 32px 0 0;
+  border-radius: 32px 32px 42px 42px;
   padding: 20px 15px;
   box-sizing: border-box;
   overflow-y: auto;
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
   text-align: center;
 }
 
+/* Typography */
 h1 {
   font-size: 18px;
   margin-bottom: 10px;
 }
 
+/* Buttons */
 button {
   background-color: #00b894;
   color: white;
@@ -57,6 +70,7 @@ button:hover {
   background-color: #019875;
 }
 
+/* Dropdown */
 select {
   width: 100%;
   padding: 8px;
@@ -64,37 +78,15 @@ select {
   margin: 10px 0;
 }
 
-#photoPreview img, #videoPreview {
+/* Previews */
+#photoPreview img,
+#videoPreview {
   margin-top: 10px;
   max-width: 100%;
   border-radius: 10px;
 }
 
+/* Video Section */
 #videoSection {
   margin-top: 10px;
-}
-.phone-frame {
-  width: 320px;
-  height: 640px;
-  margin: 40px auto;
-  background-color: #fff;
-  border-radius: 40px;
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
-  overflow-y: auto;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  padding: 20px;
-  position: relative;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #111;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
 }

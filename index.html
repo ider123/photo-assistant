@@ -15,25 +15,32 @@
     <div class="iphone-screen">
       <h1>Photo Assistant</h1>
       <p>Start your photo storytelling journey here.</p>
+
       <label for="vibeSelector">What’s your vibe today?</label>
       <select id="vibeSelector">
         <option value="cozy">Keep it cozy</option>
         <option value="spicy">Make it spicy</option>
+        <option value="clean">Stay minimal</option>
       </select>
+
       <button onclick="capturePrompt()">Get a Photo Prompt</button>
-      <p id="stepCounter">Step 1 of 20</p>
+      <div id="stepCounter">Step 1 of 20</div>
       <div id="promptBox"></div>
-      <button id="cameraButton">Take a Photo</button>
+
+      <button onclick="document.getElementById('cameraInput').click()">Take a Photo</button>
       <input type="file" accept="image/*" capture="environment" id="cameraInput" style="display:none;" />
-      <div id="photoPreview"></div>
-      <div id="videoSection">
-        <p>Optional: Record a short 10-second video</p>
-        <button id="videoButton">Record Video</button>
-        <video id="videoPreview" controls></video>
+
+      <p>Optional: Record a short 10-second video</p>
+      <button onclick="document.getElementById('videoInput').click()">Record Video</button>
+      <input type="file" accept="video/*" capture="user" id="videoInput" style="display:none;" />
+
+      <div id="mediaPreview">
+        <video controls id="videoPreview" style="display:none;"></video>
       </div>
     </div>
-    <div class="iphone-home-bar"></div>
+    <div class="swipe-bar"></div>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>

@@ -81,3 +81,23 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('button').addEventListener('click', capturePrompt);
   document.getElementById('promptBox').addEventListener('click', capturePrompt);
 });
+// Camera handling
+const cameraButton = document.getElementById('cameraButton');
+const cameraInput = document.getElementById('cameraInput');
+const photoPreview = document.getElementById('photoPreview');
+
+cameraButton.addEventListener('click', () => {
+  cameraInput.click();
+});
+
+cameraInput.addEventListener('change', () => {
+  const file = cameraInput.files[0];
+  if (file) {
+    const img = document.createElement('img');
+    img.src = URL.createObjectURL(file);
+    img.style.maxWidth = '300px';
+    img.style.marginTop = '10px';
+    photoPreview.innerHTML = '';
+    photoPreview.appendChild(img);
+  }
+});

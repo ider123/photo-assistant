@@ -171,7 +171,15 @@ button:hover {
 }
 
 .battery-fill {
-  width: 60%;
+  width: 0%;
   height: 100%;
   background: white;
+  border-radius: 1px;
+  animation: batteryCharge 3s infinite alternate ease-in-out;
+}
+
+@keyframes batteryCharge {
+  0%   { width: 20%; background: #fff; }
+  50%  { width: 80%; background: #0f0; }
+  100% { width: 100%; background: #0f0; }
 }

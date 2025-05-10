@@ -172,6 +172,12 @@ button:hover {
   background-color: #019875;
 }
 
+/* NEW: Tap/press feedback */
+button:active {
+  transform: scale(0.98);
+  opacity: 0.9;
+}
+
 #promptBox {
   margin-top: 10px;
   font-weight: bold;
@@ -188,6 +194,7 @@ button:hover {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.6; }
 }
+
 .progress-bar {
   width: 100%;
   height: 8px;

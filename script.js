@@ -151,3 +151,26 @@ recordButton.addEventListener('click', async () => {
     recordButton.textContent = 'Record Video';
   }
 });
+const recordButton = document.getElementById("recordButton");
+
+recordButton.addEventListener("click", async () => {
+  const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+  const mediaRecorder = new MediaRecorder(stream);
+  const chunks = [];
+
+  mediaRecorder.ondataavailable = (e) => chunks.push(e.data);
+
+  mediaRecorder.onstop = () => {
+    const blob = new Blob(chunks, { type: "video/webm" });
+    const videoURL = URL.createObjectURL(blob);
+    const video = document.createElement("video");
+    video.src = videoURL;
+    video.controls = true;
+    video.style.maxWidth = "100%";
+    document.getElementById("photoPreview").innerHTML = "";
+    document.getElementById("photoPreview").appendChild(video);
+  };
+
+  mediaRecorder.start();
+  setTimeout(() => mediaRecorder.stop(), 10000); // 10 seconds
+});

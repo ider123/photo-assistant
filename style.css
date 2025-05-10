@@ -1,4 +1,4 @@
-/* Outer container */
+/* General layout */
 body {
   margin: 0;
   background: #e8e8e8;
@@ -16,21 +16,17 @@ body {
   align-items: center;
   height: 100vh;
   background-color: #e8e8e8;
-  padding: 12px;
+  padding: 8px;
 }
 
 .iphone-frame {
-  width: 320px;
-  height: 690px;
+  width: 300px;
+  height: 620px;
   background: black;
-  border-top-left-radius: 54px;
-  border-top-right-radius: 54px;
-  border-bottom-left-radius: 54px;
-  border-bottom-right-radius: 54px;
-  box-shadow: 0 0 32px rgba(0, 0, 0, 0.6);
+  border-radius: 54px;
   box-shadow:
-  inset 0 0 4px rgba(255, 255, 255, 0.08),
-  0 0 32px rgba(0, 0, 0, 0.6);
+    inset 0 0 4px rgba(255, 255, 255, 0.08),
+    0 0 32px rgba(0, 0, 0, 0.6);
   overflow: hidden;
   position: relative;
   display: flex;
@@ -44,73 +40,6 @@ body {
   border-top-right-radius: 48px;
 }
 
-.iphone-status-bar {
-  height: 20px;
-  background: black;
-  color: white;
-  font-size: 12px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 4px 12px;
-  font-weight: 500;
-}
-
-.iphone-screen {
-  background: white;
-  flex: 1;
-  padding: 20px 14px 44px;
-  box-sizing: border-box;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  scroll-behavior: smooth;
-  text-align: center;
-}
-
-.swipe-indicator {
-  width: 80px;
-  height: 5px;
-  background: #ccc;
-  border-radius: 3px;
-  margin: 12px auto;
-}
-
-/* UI Styling */
-h1 {
-  font-size: 18px;
-  margin: 8px 0;
-}
-
-p {
-  font-size: 14px;
-  margin: 6px 0;
-}
-
-select, button {
-  font-size: 14px;
-  padding: 10px 12px;
-  margin: 10px auto;
-  width: 100%;
-  max-width: 220px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-}
-
-button {
-  background-color: #00b894;
-  color: white;
-  font-weight: 500;
-}
-
-button:hover {
-  background-color: #019875;
-}
-
-#promptBox {
-  margin-top: 12px;
-  font-weight: bold;
-}
 .dynamic-island {
   position: absolute;
   top: 10px;
@@ -123,6 +52,20 @@ button:hover {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
   z-index: 10;
 }
+
+/* Status bar */
+.iphone-status-bar {
+  height: 20px;
+  background: black;
+  color: white;
+  font-size: 11px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 12px;
+  font-weight: 500;
+}
+
 .status-icons {
   display: flex;
   gap: 6px;
@@ -136,7 +79,6 @@ button:hover {
   margin-right: 1px;
   border-radius: 1px;
 }
-
 .signal-bars span:nth-child(1) { height: 4px; }
 .signal-bars span:nth-child(2) { height: 6px; }
 .signal-bars span:nth-child(3) { height: 8px; }
@@ -177,6 +119,66 @@ button:hover {
   transition: width 0.5s ease, background 0.5s ease;
 }
 
+/* iPhone screen content */
+.iphone-screen {
+  background: white;
+  flex: 1;
+  padding: 16px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  text-align: center;
+}
+
+/* Swipe bar */
+.swipe-indicator {
+  width: 80px;
+  height: 5px;
+  background: #ccc;
+  border-radius: 3px;
+  margin: 10px auto 14px;
+}
+
+/* Text styles */
+h1 {
+  font-size: 16px;
+  margin: 6px 0;
+}
+
+p {
+  font-size: 13px;
+  margin: 4px 0;
+}
+
+select, button {
+  font-size: 13px;
+  padding: 8px 12px;
+  margin: 10px auto;
+  width: 100%;
+  max-width: 220px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+button {
+  background-color: #00b894;
+  color: white;
+  font-weight: 500;
+}
+
+button:hover {
+  background-color: #019875;
+}
+
+#promptBox {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+/* Battery Animation */
 @keyframes batteryCharge {
   0%   { width: 20%; background: #fff; }
   50%  { width: 80%; background: #0f0; }

@@ -182,3 +182,7 @@ button:hover {
   50%  { width: 80%; background: #0f0; }
   100% { width: 100%; background: #0f0; }
 }
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}

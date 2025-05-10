@@ -1,88 +1,90 @@
-/* Fullscreen Layout */
-body, html {
+/* Outer container */
+body {
   margin: 0;
-  padding: 0;
-  background-color: #e9e9e9;
-  height: 100vh;
+  background: #e8e8e8;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   overflow: hidden;
 }
 
-/* Center the phone on screen */
-.frame-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.iphone-container {
   width: 100%;
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* iPhone 15 Mockup Frame */
 .iphone-frame {
-  width: 390px;
-  height: 844px;
-  background-color: black;
-  border-radius: 52px;
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+  width: 280px;
+  height: 620px;
+  background: black;
+  border-radius: 48px;
+  box-shadow: 0 0 32px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  position: relative;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
 }
 
-/* Fake Status Bar */
+.iphone-notch {
+  height: 28px;
+  background: black;
+  border-top-left-radius: 48px;
+  border-top-right-radius: 48px;
+}
+
 .iphone-status-bar {
-  height: 30px;
-  background-color: black;
+  height: 20px;
+  background: black;
   color: white;
-  font-size: 13px;
-  font-weight: 500;
+  font-size: 12px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 16px;
+  padding: 4px 12px;
+  font-weight: 500;
 }
 
-/* White Scrollable Screen */
 .iphone-screen {
   background: white;
-  height: calc(100% - 30px);
-  border-radius: 40px 40px 52px 52px;
-  overflow-y: auto;
+  flex: 1;
   padding: 24px 16px 48px;
   box-sizing: border-box;
-  text-align: center;
+  overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  text-align: center;
 }
 
-/* Swipe Home Bar */
-.swipe-bar {
-  width: 120px;
+.swipe-indicator {
+  width: 80px;
   height: 5px;
   background: #ccc;
-  margin: 16px auto 0;
-  border-radius: 999px;
+  border-radius: 3px;
+  margin: 12px auto;
 }
 
-/* Typography */
+/* UI Styling */
 h1 {
-  font-size: 20px;
+  font-size: 18px;
   margin: 8px 0;
 }
 
 p {
   font-size: 14px;
-  margin: 8px 0;
+  margin: 6px 0;
 }
 
-/* Form + Buttons */
 select, button {
   font-size: 14px;
-  padding: 12px;
-  margin: 12px auto;
-  width: 90%;
-  max-width: 280px;
+  padding: 10px 12px;
+  margin: 10px auto;
+  width: 100%;
+  max-width: 220px;
   border-radius: 8px;
   border: none;
   cursor: pointer;
@@ -91,7 +93,7 @@ select, button {
 button {
   background-color: #00b894;
   color: white;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 button:hover {

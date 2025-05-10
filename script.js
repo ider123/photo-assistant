@@ -38,9 +38,20 @@ function capturePrompt() {
     promptBox.innerText = randomPrompt;
     currentStep++;
     stepText.innerText = `Step ${currentStep} of 20`;
+
+    // Update progress bar
+    const progressFill = document.getElementById("progressFill");
+    const progressPercent = Math.min((currentStep / 20) * 100, 100);
+    progressFill.style.width = progressPercent + "%";
+
   } else if (currentStep === 20) {
     promptBox.innerText = "Now record a short 10-second video of your workout!";
     stepText.innerText = `Step 20 of 20`;
+
+    // Fill to 100%
+    const progressFill = document.getElementById("progressFill");
+    progressFill.style.width = "100%";
+
     currentStep++;
   } else {
     promptBox.innerText = "You're done for today!";
@@ -111,7 +122,7 @@ document.getElementById("cameraInput").addEventListener("change", function () {
   }
 });
 
-// ==== VIDEO RECORDING ====
+// VIDEO RECORDING
 let mediaRecorder;
 let recordedChunks = [];
 
@@ -146,7 +157,7 @@ recordButton.addEventListener("click", async () => {
         mediaRecorder.stop();
         recordButton.textContent = "Record Video";
       }
-    }, 10000); // Auto stop after 10s
+    }, 10000);
   } else {
     mediaRecorder.stop();
     recordButton.textContent = "Record Video";

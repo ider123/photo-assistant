@@ -52,3 +52,14 @@ navigator.getBattery().then(function(battery) {
   updateBatteryLevel();
   battery.addEventListener('levelchange', updateBatteryLevel);
 });
+  function updateChargingStatus() {
+    const fill = document.querySelector('.battery-fill');
+    if (battery.charging) {
+      fill.style.animation = 'pulse 1.5s infinite ease-in-out';
+    } else {
+      fill.style.animation = 'none';
+    }
+  }
+
+  updateChargingStatus();
+  battery.addEventListener('chargingchange', updateChargingStatus);

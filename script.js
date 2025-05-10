@@ -33,3 +33,22 @@ updateClock();
 
 // Update every minute
 setInterval(updateClock, 60000);
+navigator.getBattery().then(function(battery) {
+  function updateBatteryLevel() {
+    const fill = document.querySelector('.battery-fill');
+    const level = Math.round(battery.level * 100); // 0–100%
+    fill.style.width = level + '%';
+
+    // Dynamic color change
+    if (level > 50) {
+      fill.style.background = '#0f0'; // Green
+    } else if (level > 20) {
+      fill.style.background = '#ffa500'; // Orange
+    } else {
+      fill.style.background = '#f00'; // Red
+    }
+  }
+
+  updateBatteryLevel();
+  battery.addEventListener('levelchange', updateBatteryLevel);
+});

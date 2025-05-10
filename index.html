@@ -7,12 +7,13 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="frame-wrapper">
+  <div class="iphone-container">
     <div class="iphone-frame">
       <div class="iphone-status-bar">
         <span id="clock">3:04</span>
         <span id="network">Wi-Fi LTE 61%</span>
       </div>
+
       <div class="iphone-screen">
         <h1>Photo Assistant</h1>
         <p>Start your photo storytelling journey here.</p>
@@ -20,24 +21,23 @@
         <label for="vibeSelector">What’s your vibe today?</label>
         <select id="vibeSelector">
           <option value="cozy">Keep it cozy</option>
-          <option value="spicy">Make it bold</option>
-          <option value="quiet">Stay minimal</option>
+          <option value="spicy">Make it spicy</option>
         </select>
 
         <button onclick="capturePrompt()">Get a Photo Prompt</button>
-        <p id="stepCounter">Step 1 of 20</p>
+        <div id="stepCounter">Step 1 of 20</div>
         <div id="promptBox"></div>
 
         <button id="cameraButton">Take a Photo</button>
-
         <p>Optional: Record a short 10-second video</p>
-        <button id="videoButton">Record Video</button>
+        <button id="recordButton">Record Video</button>
 
-        <div class="swipe-bar"></div>
+        <div class="swipe-indicator"></div>
+        <input type="file" accept="image/*" capture="environment" id="cameraInput" style="display:none;" />
+        <div id="photoPreview"></div>
       </div>
     </div>
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>

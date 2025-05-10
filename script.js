@@ -14,3 +14,22 @@ function capturePrompt() {
     stepText.innerText = `Step ${currentStep + 1} of 20`;
   }
 }
+function updateClock() {
+  const clockElement = document.getElementById('clock');
+  const now = new Date();
+  let hours = now.getHours();
+  let minutes = now.getMinutes();
+
+  // Convert to 12-hour format if you prefer
+  // hours = hours % 12 || 12;
+
+  // Pad with leading zeros
+  if (minutes < 10) minutes = '0' + minutes;
+  clockElement.textContent = `${hours}:${minutes}`;
+}
+
+// Run on load
+updateClock();
+
+// Update every minute
+setInterval(updateClock, 60000);

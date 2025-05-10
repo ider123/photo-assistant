@@ -4,6 +4,7 @@ function capturePrompt() {
     "Show your cozy corner",
     "Photograph something green"
   ];
+
   const stepText = document.getElementById("stepCounter");
   const promptBox = document.getElementById("promptBox");
   const currentStep = parseInt(stepText.innerText.match(/\d+/)[0]);

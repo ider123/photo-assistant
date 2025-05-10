@@ -110,3 +110,44 @@ document.getElementById("cameraInput").addEventListener("change", function () {
     preview.appendChild(img);
   }
 });
+// ==== VIDEO RECORDING ====
+
+let mediaRecorder;
+let recordedChunks = [];
+
+const recordButton = document.getElementById('recordButton');
+
+recordButton.addEventListener('click', async () => {
+  if (recordButton.textContent === 'Record Video') {
+    const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+    mediaRecorder = new MediaRecorder(stream);
+
+    mediaRecorder.ondataavailable = (event) => {
+      if (event.data.size > 0) recordedChunks.push(event.data);
+    };
+
+    mediaRecorder.onstop = () => {
+      const blob = new Blob(recordedChunks, { type: 'video/webm' });
+      const url = URL.createObjectURL(blob);
+      const video = document.createElement('video');
+      video.src = url;
+      video.controls = true;
+      video.style.width = '100%';
+      document.getElementById('photoPreview').appendChild(video);
+    };
+
+    mediaRecorder.start();
+    recordButton.textContent = 'Stop Recording';
+
+    // Автоматаар 10 секунд болгоод зогсооно
+    setTimeout(() => {
+      if (mediaRecorder.state !== 'inactive') {
+        mediaRecorder.stop();
+        recordButton.textContent = 'Record Video';
+      }
+    }, 10000);
+  } else {
+    mediaRecorder.stop();
+    recordButton.textContent = 'Record Video';
+  }
+});
